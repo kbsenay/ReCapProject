@@ -12,7 +12,8 @@ namespace Business.Abstract
         void Delete(Color color);
 
         List<Color> GetAll();
-        Color GetCarsByColorId(int id);
+        List<Color> GetByColorId(int colorId);
+
 
     }
 }
