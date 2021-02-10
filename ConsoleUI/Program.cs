@@ -13,7 +13,15 @@ namespace ConsoleUI
             CarManager carManager = new CarManager(new EfCarDal());
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             ColorManager colorManager = new ColorManager(new EfColorDal());
+
+            foreach (var car in carManager.GetCarDetails())
+            {
+                Console.WriteLine(car.BrandName + "/"+ car.ColorName);
+            }
             
+            
+            //TestDeleteMethodForBrandAndColor(brandManager, colorManager);
+            //TestAddMethodForBrandAndColor(brandManager, colorManager);
             //TestCarDelete(carManager);
             //TestGetMethodForBrandAndColor(brandManager, colorManager);
             //TestGetMethods(carManager);
@@ -21,6 +29,18 @@ namespace ConsoleUI
 
 
 
+        }
+
+        private static void TestDeleteMethodForBrandAndColor(BrandManager brandManager, ColorManager colorManager)
+        {
+            brandManager.Delete(new Brand { BrandId = 6 });
+            colorManager.Delete(new Color { ColorId = 5 });
+        }
+
+        private static void TestAddMethodForBrandAndColor(BrandManager brandManager, ColorManager colorManager)
+        {
+            colorManager.Add(new Color { ColorName = "Yeşil" });
+            brandManager.Add(new Brand { BrandName = "Peugeout" });
         }
 
         private static void TestCarDelete(CarManager carManager)
