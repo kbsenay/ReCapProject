@@ -23,7 +23,7 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.CarNameInvalid);
             }
             _colorDal.Add(color);
-            return new SuccessResult(Messages.ColorAdded)
+            return new SuccessResult(Messages.ColorAdded);
         }
 
         public IResult Delete(Color color)
