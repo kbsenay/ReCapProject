@@ -18,7 +18,12 @@ namespace ConsoleUI
             CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
 
-            RentalsListMethod(rentalManager);
+            foreach (var color in carManager.GetAll().Data)
+            {
+                Console.WriteLine(color.ColorId);
+            }
+
+            //RentalsListMethod(rentalManager);
             //RentalDeleteMethod(rentalManager);
             //RentalAddMethod(rentalManager);
             //CustomerAddMethod(customerManager);
@@ -44,7 +49,7 @@ namespace ConsoleUI
                 Console.WriteLine(car.CarId + " " + "|" + " " + car.CarId + " " + "|" + " "
                     + car.RentDate + " " + "|" + " " + car.ReturnDate);
             }
-            Console.WriteLine(Messages.RentalListed);
+            Console.WriteLine(Messages.RentalsListed);
         }
 
         private static void RentalDeleteMethod(RentalManager rentalManager)
@@ -109,11 +114,11 @@ namespace ConsoleUI
         //            colorManager.Delete(new Color { ColorId = 5 });
         //        }
 
-        //        private static void TestAddMethodForBrandAndColor(BrandManager brandManager, ColorManager colorManager)
-        //        {
-        //            colorManager.Add(new Color { ColorName = "Yeşil" });
-        //            brandManager.Add(new Brand { BrandName = "Peugeout" });
-        //        }
+        //private static void TestAddMethodForBrandAndColor(BrandManager brandManager, ColorManager colorManager)
+        //{
+        //    colorManager.Add(new Color { ColorName = "Yeşil" });
+        //    //brandManager.Add(new Brand { BrandName = "Peugeout" });
+        //}
 
         //        private static void TestCarDelete(CarManager carManager)
         //        {

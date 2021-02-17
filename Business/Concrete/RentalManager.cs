@@ -47,19 +47,19 @@ namespace Business.Concrete
 
         public IDataResult<List<Rental>> GetAll()
         {
-            return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll());
+            return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(),Messages.RentalsListed);
         }
 
         public IDataResult<Rental> GetById(int id)
         {
-            return new SuccessDataResult<Rental>(_rentalDal.Get(p=>p.Id ==id));
+            return new SuccessDataResult<Rental>(_rentalDal.Get(p=>p.Id ==id),Messages.RentalsListed);
         }
 
      
 
         public IDataResult<List<RentalDetailDto>> GetRentalDetails(int carId)
         {
-            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails(r=>r.CarId == carId));
+            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails(r=>r.CarId == carId),Messages.RentalsListed);
         }
 
         public IResult Update(Rental rental)
