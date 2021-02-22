@@ -10,7 +10,7 @@ namespace Business.ValidationRules.FluentValidation
     {
         public ColorValidator()
         {
-            RuleFor(x => x.Name).MinimumLength(2).WithMessage("Renk adı en az 2 karakter olmalıdır.");
+            RuleFor(x => x.ColorName).MinimumLength(2).WithMessage("Renk adı en az 2 karakter olmalıdır.");
         }
     }
 }

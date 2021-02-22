@@ -22,9 +22,9 @@ namespace Business.Concrete
         }
         public IResult Add(Rental rental)
         {
-            ValidationTool.Validate(new RentalValidator(), rental)
+            ValidationTool.Validate(new RentalValidator(), rental);
             _rentalDal.Add(rental);
-            return new SuccessResult(result.Message);
+            return new SuccessResult(Messages.RentalAdded);
         }
 
         public IResult CheckReturnDate(int carId)
