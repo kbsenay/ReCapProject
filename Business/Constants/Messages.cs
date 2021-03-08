@@ -45,7 +45,7 @@ namespace Business.Constants
         public static string RentalsListed = "Kiralanan araçlar listelendi!";
         public static string RentalReturnDate = "Araç bırakıldı!";
         public static string RentalReturndateError = "Araç zaten bırakılmış!";
-
-
+        public static string FailAddedImageLimit = "Resim limiti doldu!";
+        public static string ImageAdded = "Resim eklendi!";
     }
 }
